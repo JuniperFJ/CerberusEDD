@@ -22,10 +22,10 @@ public final class Constants {
   }
 
   public static class Ports {
-    public static final int LeftDrive1Port = 1;
-    public static final int RightDrive1Port = 2;
-    public static final int LeftDrive2Port = 3;
-    public static final int RightDrive2Port = 4;
+    public static final int LeftDrive1Port = 0;
+    public static final int RightDrive1Port = 0;
+    public static final int LeftDrive2Port = 1;
+    public static final int RightDrive2Port = 1;
   }
 
   public static class Inverted {
