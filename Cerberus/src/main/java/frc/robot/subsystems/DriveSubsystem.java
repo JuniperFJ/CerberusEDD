@@ -9,7 +9,6 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
-import edu.wpi.first.wpilibj.motorcontrol.MotorControllerGroup;
 import edu.wpi.first.wpilibj.motorcontrol.Spark;
 
 
@@ -20,34 +19,18 @@ public class DriveSubsystem extends SubsystemBase {
   /** Creates a new ExampleSubsystem. */
   private Spark m_MotorLeft1;
   private Spark m_MotorRight1;
-  private Spark m_MotorLeft2 ;
-  private Spark m_MotorRight2;
   private DifferentialDrive driveMotorGroup;
-  private MotorControllerGroup RightMotors;
-  private MotorControllerGroup LeftMotors;
 
   public DriveSubsystem() {
-    m_MotorLeft1 = new Spark(Constants.Ports.LeftDrive1Port); 
+    m_MotorLeft1 = new Spark(Constants.Ports.LeftDrivePort); 
       addChild("m_LeftDrive1",m_MotorLeft1);
-      m_MotorLeft1.setInverted(Constants.Inverted.LeftDriveMotor1);
+      m_MotorLeft1.setInverted(Constants.Inverted.LeftDriveMotor);
 
-    m_MotorRight1 = new Spark(Constants.Ports.RightDrive1Port);
+    m_MotorRight1 = new Spark(Constants.Ports.RightDrivePort);
       addChild("m_RightDrive1",m_MotorRight1);
-      m_MotorLeft1.setInverted(Constants.Inverted.RightDriveMotor1);
-    
-    m_MotorLeft2 = new Spark(Constants.Ports.LeftDrive2Port);
-      addChild("m_LeftDrive2",m_MotorLeft2);
-      m_MotorLeft2.setInverted(Constants.Inverted.LeftDriveMotor2);
-  
-    m_MotorRight2 = new Spark(Constants.Ports.RightDrive2Port);
-      addChild("m_RightDrive2",m_MotorRight2);
-      m_MotorRight2.setInverted(Constants.Inverted.RightDriveMotor2);
+      m_MotorLeft1.setInverted(Constants.Inverted.RightDriveMotor);
 
-
-    RightMotors = new MotorControllerGroup(m_MotorRight1,m_MotorRight2);
-    LeftMotors  = new MotorControllerGroup(m_MotorLeft1, m_MotorLeft2);
-
-    driveMotorGroup = new DifferentialDrive(LeftMotors, RightMotors);
+    driveMotorGroup = new DifferentialDrive(m_MotorLeft1, m_MotorRight1);
       addChild("DriveMotorGroup",driveMotorGroup);
     driveMotorGroup.setSafetyEnabled(true);
     driveMotorGroup.setExpiration(0.1);

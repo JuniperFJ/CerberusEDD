@@ -22,17 +22,13 @@ public final class Constants {
   }
 
   public static class Ports {
-    public static final int LeftDrive1Port = 0;
-    public static final int RightDrive1Port = 0;
-    public static final int LeftDrive2Port = 1;
-    public static final int RightDrive2Port = 1;
+    public static final int LeftDrivePort = 0;
+    public static final int RightDrivePort = 1;
   }
 
   public static class Inverted {
-    public static final Boolean LeftDriveMotor1 = true;
-    public static final Boolean LeftDriveMotor2 = true;
-    public static final Boolean RightDriveMotor1 = false;
-    public static final Boolean RightDriveMotor2 = false;
+    public static final Boolean LeftDriveMotor = true;
+    public static final Boolean RightDriveMotor = false;
 
   }
 }
